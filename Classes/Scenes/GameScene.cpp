@@ -1,3 +1,10 @@
+//
+//  GameScene.cpp
+//  BraitenbergVehicles
+//
+//  Created by Paweł Gajewski on 23/11/2017.
+//
+//
 #include "GameScene.h"
 #include "BackgroundLayer.h"
 #include "ActionLayer.h"

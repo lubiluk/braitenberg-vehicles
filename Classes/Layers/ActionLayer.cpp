@@ -1,8 +1,8 @@
 //
 //  ActionLayer.cpp
-//  Space
+//  BraitenbergVehicles
 //
-//  Created by Paweł Gajewski on 05/09/2017.
+//  Created by Paweł Gajewski on 23/11/2017.
 //
 //
 

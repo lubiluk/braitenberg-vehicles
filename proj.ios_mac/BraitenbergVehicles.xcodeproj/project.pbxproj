@@ -59,6 +59,8 @@
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
+		937B02F61FE8731E00FB85F9 /* Vehicle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 937B02F41FE8731E00FB85F9 /* Vehicle.cpp */; };
+		937B02F71FE8731E00FB85F9 /* Vehicle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 937B02F41FE8731E00FB85F9 /* Vehicle.cpp */; };
 		93A314491FCD5CE900D2611C /* BackgroundLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93A314481FCD5CE900D2611C /* BackgroundLayer.cpp */; };
 		93A3144A1FCD5CE900D2611C /* BackgroundLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93A314481FCD5CE900D2611C /* BackgroundLayer.cpp */; };
 		93A314501FCD60CB00D2611C /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 93A3144E1FCD60CB00D2611C /* GameScene.cpp */; };
@@ -165,6 +167,8 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		937B02F41FE8731E00FB85F9 /* Vehicle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vehicle.cpp; sourceTree = "<group>"; };
+		937B02F51FE8731E00FB85F9 /* Vehicle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
 		93A314471FCD5CE900D2611C /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
 		93A314481FCD5CE900D2611C /* BackgroundLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BackgroundLayer.cpp; sourceTree = "<group>"; };
 		93A3144E1FCD60CB00D2611C /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
@@ -317,6 +321,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				937B02F21FE872DA00FB85F9 /* Nodes */,
 				93A3144C1FCD5DE000D2611C /* Scenes */,
 				93A314431FCD5CD000D2611C /* Layers */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
@@ -372,6 +377,15 @@
 			name = Icons;
 			path = ios;
 			sourceTree = SOURCE_ROOT;
+		};
+		937B02F21FE872DA00FB85F9 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				937B02F41FE8731E00FB85F9 /* Vehicle.cpp */,
+				937B02F51FE8731E00FB85F9 /* Vehicle.h */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
 		};
 		93A314431FCD5CD000D2611C /* Layers */ = {
 			isa = PBXGroup;
@@ -545,6 +559,7 @@
 				93A314501FCD60CB00D2611C /* GameScene.cpp in Sources */,
 				93A314541FCD613B00D2611C /* ActionLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				937B02F61FE8731E00FB85F9 /* Vehicle.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				93A314491FCD5CE900D2611C /* BackgroundLayer.cpp in Sources */,
@@ -559,6 +574,7 @@
 				93A3144A1FCD5CE900D2611C /* BackgroundLayer.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				93A314511FCD60CB00D2611C /* GameScene.cpp in Sources */,
+				937B02F71FE8731E00FB85F9 /* Vehicle.cpp in Sources */,
 				93A314551FCD613B00D2611C /* ActionLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

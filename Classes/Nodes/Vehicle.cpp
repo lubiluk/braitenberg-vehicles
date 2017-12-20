@@ -136,6 +136,12 @@ bool Vehicle::onControlTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event)
     
     if (getBoundingBox().containsPoint(location)) {
         dragged = true;
+        
+        auto body = getPhysicsBody();
+        body->resetForces();
+        body->setVelocity(Vec2::ZERO);
+        body->setAngularVelocity(0.0f);
+        
         return true;
     }
 

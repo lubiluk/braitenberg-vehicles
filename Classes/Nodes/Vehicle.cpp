@@ -15,10 +15,11 @@ static const float sensorRadius { 2.0f };
 static const float sensorAngle { 90.0f };
 static const float sensorFactor = 100.0f;
 static const float lightSourceIntensity = 100000.0f;
-static const float actuationFactor = 20000.0f;
+static const float actuationFactor = 10000.0f;
 static const float actuationMaxForce = 5000.0f;
 static const Vec2 wheelCenterLeft = Vec2(-vehicleSize.width / 2 - wheelSize.width, -vehicleSize.height / 2);
 static const Vec2 wheelCenterRight = Vec2(vehicleSize.width / 2 + wheelSize.width, -vehicleSize.height / 2);
+static const float waterFriction = 0.8f;
 
 Vehicle::Vehicle(): crossed(false)
 {
@@ -50,6 +51,8 @@ void Vehicle::createShape()
     body->addShape(main);
     body->addShape(wheelLeft);
     body->addShape(wheelRight);
+    body->setLinearDamping(waterFriction);
+    body->setAngularDamping(waterFriction);
     
     addComponent(body);
     
@@ -109,8 +112,8 @@ void Vehicle::updatePropulsion(cocos2d::Vec2 lightPosition)
     const auto positionSenorRight = convertToWorldSpace(sensorRight->getPosition());
     const auto sensorOutputRight = calculateSensorSignal(positionSenorRight, lightPosition);
     
-    const auto forceLeft = clampf(sensorOutputLeft * sensorOutputLeft * actuationFactor, 0.0f, actuationMaxForce);
-    const auto forceRight = clampf(sensorOutputRight * sensorOutputLeft * actuationFactor, 0.0f, actuationMaxForce);
+    const auto forceLeft = clampf(sensorOutputLeft * actuationFactor, 0.0f, actuationMaxForce);
+    const auto forceRight = clampf(sensorOutputRight * actuationFactor, 0.0f, actuationMaxForce);
     
     CCLOG("force: %f %f", forceLeft, forceRight);
     
@@ -123,29 +126,6 @@ void Vehicle::updatePropulsion(cocos2d::Vec2 lightPosition)
         body->applyForce(Vec2(0.0f, forceLeft), wheelCenterLeft);
         body->applyForce(Vec2(0.0f, forceRight), wheelCenterRight);
     }
-    
-    // Friction
-    auto velocity = body->getVelocity();
-    body->setVelocity(velocity * 0.97f);
-    
-    // Angular friction
-    auto angularVelocity = body->getAngularVelocity();
-    body->setAngularVelocity(angularVelocity * 0.97f);
-    
-//    const auto velocity = body->getVelocity();
-//
-//    if (velocity.length() > 0) {
-//        // Friction
-//        body->applyForce(-(velocity.getNormalized()) * 500.0f);
-//    }
-//
-//    const auto angularVelocity = body->getAngularVelocity();
-//
-//    if (angularVelocity != 0) {
-//        // Friction
-//        const float sign = (angularVelocity >= 0) ? 1.0f : -1.0f;
-//        body->applyTorque(-sign * 0.00000001f);
-//    }
 }
 
 #pragma mark Touch event listeners

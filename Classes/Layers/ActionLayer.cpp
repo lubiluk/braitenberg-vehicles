@@ -49,6 +49,23 @@ bool ActionLayer::init()
         vehicles.pushBack(vehicle);
     }
     
+    {
+        auto vehicle = Vehicle::create();
+        vehicle->setPosition(center.x + 100.0f, center.y + 100.0f);
+        vehicle->setRotation(180.0f);
+        addChild(vehicle);
+        vehicles.pushBack(vehicle);
+    }
+    
+    {
+        auto vehicle = Vehicle::create();
+        vehicle->setCrossed(true);
+        vehicle->setPosition(center.x - 100.0f, center.y + 100.0f);
+        vehicle->setRotation(180.0f);
+        addChild(vehicle);
+        vehicles.pushBack(vehicle);
+    }
+    
     this->scheduleUpdate();
     
     return true;
